@@ -1,0 +1,10 @@
+# Environment variables
+/.venv
+.env
+
+# Code editors
+/.idea
+/.vscode
+
+# Custom
+*_private*
