@@ -56,7 +56,7 @@ def get_total_balance_of_today():
         .order_by(Balance.date.desc()) \
         .first()
 
-    print(f"{total_amount.date} TOTAL: {total_amount.daily_balance}")
+    print(f"{total_amount.date} TOTAL: {round(total_amount.daily_balance, 2)}")
 
     session.close()
 
@@ -72,9 +72,3 @@ def get_total_balance_by_day():
         print(f"{row.date} {round(row.daily_balance, 2)}")
 
     session.close()
-
-
-if __name__ == '__main__':
-    get_balances_of_today()
-    get_total_balance_of_today()
-    # get_total_balance_by_day()

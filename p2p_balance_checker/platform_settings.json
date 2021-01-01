@@ -6,6 +6,13 @@
     "element_password": "input[name=password]",
     "element_balance": "span.account_value"
   },
+  "Lenndy": {
+    "url_login": "https://lenndy.com/login",
+    "url_dashboard": "https://lenndy.com/dashboard",
+    "element_user": "input[name=_username]",
+    "element_password": "input[name=_password]",
+    "element_balance": "#welcomeDiv div.row div.row"
+  },
   "RoboCash": {
     "url_login": "https://robo.cash/login",
     "url_dashboard": "https://robo.cash/cabinet/summary",
