@@ -24,11 +24,10 @@ def get_bondora_balance() -> float:
             retry_after_message: str = data["Errors"][0]["Details"]
             # get number from string e.g. "Retry after 547" >> 547
             retry_after_seconds: int = int(retry_after_message.split()[2])
-            print(
-                f"{retry_after_message} seconds [{convert_seconds_into_hours_minutes_seconds(retry_after_seconds)}].")
+            print(f"{retry_after_message} seconds "
+                  f"[{convert_seconds_into_hours_minutes_seconds(retry_after_seconds)}].")
             return 0
         elif not response.raise_for_status():  # Raise `HTTPError`, if one occurred, return None
-            print(response.status_code)
             data: dict = response.json()
 
             """ 
@@ -43,18 +42,15 @@ def get_bondora_balance() -> float:
             balance_go_grow_accounts: float = 0
 
             for account in data["Payload"]["GoGrowAccounts"]:
-                account["TotalSaved"] += balance_go_grow_accounts
+                balance_go_grow_accounts += account["TotalSaved"]
 
             balance_total: float = balance_main_account + balance_go_grow_accounts
-            print(f"{type(balance_total)} {balance_total=}")
+            platform_sum = format(balance_total, '.2f')
 
-            # platform_sum = format(platform_sum_go_and_grow + platform_sum_main, '.2f')
-            # platform_sum = float(platform_sum)  # convert <str> to <float>
-            return balance_total
+            return float(platform_sum)
     except Exception as error_message:
         print("Bondora: >>>>>>>>>>", error_message)
         traceback.print_exc()
-        return 0
 
 
 def convert_seconds_into_hours_minutes_seconds(seconds: int) -> str:
