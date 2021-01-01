@@ -4,26 +4,26 @@ import time
 
 
 def get_inner_html_after_login(driver_path: str,
-                               url: str,
-                               user_element: str = "",
-                               password_element: str = "",
-                               user_value: str = "",
-                               password_value: str = "",
+                               url_login: str,
+                               selector_user_field: str = "",
+                               selector_password_field: str = "",
+                               value_user: str = "",
+                               value_password: str = "",
                                url_dashboard: str = "") -> str:
     driver: webdriver.chrome.webdriver.WebDriver = webdriver.Chrome(driver_path)
 
     # Load a web page in the current browser session.
-    driver.get(url)
+    driver.get(url_login)
 
     # LOGIN
     # Find fields. Their type is <webdriver.remote.webelement.WebElement>
-    user_field = driver.find_element_by_css_selector(user_element)
-    password_field = driver.find_element_by_css_selector(password_element)
+    user_field = driver.find_element_by_css_selector(selector_user_field)
+    password_field = driver.find_element_by_css_selector(selector_password_field)
     # driver.implicitly_wait(60)
 
     # Fill form and press enter
-    user_field.send_keys(user_value)
-    password_field.send_keys(password_value)
+    user_field.send_keys(value_user)
+    password_field.send_keys(value_password)
     password_field.send_keys(Keys.RETURN)
 
     # Navigate to page
