@@ -1,4 +1,4 @@
-# Environment variables
+# Environment variables and virtual environment
 /.venv
 .env
 
@@ -6,5 +6,9 @@
 /.idea
 /.vscode
 
+# Pytest
+/.pytest_cache
+
 # Custom
 *_private*
+/_private

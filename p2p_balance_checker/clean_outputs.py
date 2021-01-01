@@ -46,6 +46,6 @@ def get_float_from_html_string(html_string: str) -> float:
     integers: list = re.findall(r"\d+", html_string)
 
     if integers:
-        # E.g. <h1>Heading with no numbers</h1> has no balance
+        # E.g. <h1>Heading with no numbers</h1> has integers, but no balance
         print(f"{integers} doe's not contain valid balance value")
         return 0
