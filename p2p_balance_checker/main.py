@@ -43,9 +43,9 @@ def get_platform_balance(platform_name: str) -> float:
 
 
 if __name__ == '__main__':
-    # get_platform_balance("Bondora")
+    get_platform_balance("Bondora")
     get_platform_balance("Finbee")
     get_platform_balance("Viventor")
-
     print()
     database_abstraction_layer.get_balances_of_today()
+    database_abstraction_layer.get_total_balance_of_today()

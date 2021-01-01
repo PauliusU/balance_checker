@@ -1,4 +1,5 @@
 import datetime
+from sqlalchemy.sql import func
 
 from data import db_connection
 from models.balance import Balance
@@ -46,5 +47,34 @@ def get_balances_of_today():
     session.close()
 
 
+def get_total_balance_of_today():
+    session = db_connection.create_db_session()
+    date_of_today: str = datetime.datetime.today().strftime('%Y-%m-%d')  # E.g. "2021-01-01"
+
+    total_amount = session.query(Balance.date, func.sum(Balance.balance).label("daily_balance")) \
+        .group_by(Balance.date) \
+        .order_by(Balance.date.desc()) \
+        .first()
+
+    print(f"{total_amount.date} TOTAL: {total_amount.daily_balance}")
+
+    session.close()
+
+
+def get_total_balance_by_day():
+    session = db_connection.create_db_session()
+
+    total_amounts_by_day = session.query(Balance.date, func.sum(Balance.balance).label("daily_balance")) \
+        .group_by(Balance.date) \
+        .all()
+
+    for row in total_amounts_by_day:
+        print(f"{row.date} {round(row.daily_balance, 2)}")
+
+    session.close()
+
+
 if __name__ == '__main__':
     get_balances_of_today()
+    get_total_balance_of_today()
+    # get_total_balance_by_day()
