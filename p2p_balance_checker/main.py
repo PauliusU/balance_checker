@@ -1,11 +1,11 @@
 import traceback
 
+from data import database_abstraction_layer
 import api_bondora
-import config
 import clean_outputs
+import config
 import platform_settings
 import scraper
-from data import database_abstraction_layer
 
 
 def get_platform_balance(platform_name: str) -> float:
@@ -25,7 +25,8 @@ def get_platform_balance(platform_name: str) -> float:
                                                              platform["element_password"],
                                                              platform["username"],
                                                              platform["password"],
-                                                             platform["url_dashboard"])
+                                                             platform["url_dashboard"],
+                                                             platform_name)
 
         html_tag: str = clean_outputs.get_html_tag_from_inner_html(inner_html, platform["element_balance"])
         platform_balance: float = clean_outputs.get_float_from_html_tag(html_tag)
@@ -43,9 +44,10 @@ def get_platform_balance(platform_name: str) -> float:
 
 
 if __name__ == '__main__':
-    get_platform_balance("Bondora")
-    get_platform_balance("Finbee")
-    get_platform_balance("Viventor")
+    # get_platform_balance("Bondora")
+    # get_platform_balance("Finbee")
+    # get_platform_balance("Viventor")
+    get_platform_balance("RoboCash")
     print()
     database_abstraction_layer.get_balances_of_today()
     database_abstraction_layer.get_total_balance_of_today()

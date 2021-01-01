@@ -3,10 +3,14 @@ import bs4 as bs
 
 
 def get_html_tag_from_inner_html(inner_html: str, tag_selector: str) -> str:
-    soup: bs.BeautifulSoup = bs.BeautifulSoup(inner_html, 'lxml')
-    html_tag: bs.element.Tag = soup.select_one(tag_selector)
+    if inner_html:
+        soup: bs.BeautifulSoup = bs.BeautifulSoup(inner_html, 'lxml')
+        html_tag: bs.element.Tag = soup.select_one(tag_selector)
 
-    return str(html_tag)
+        return str(html_tag)
+
+    print("inner_HTML string is empty")
+    return ""
 
 
 def get_float_from_html_tag(html_string: str) -> float:
@@ -18,6 +22,7 @@ def get_float_from_html_tag(html_string: str) -> float:
     contained_numbers: list = re.findall(r"\d+", html_string)
 
     if not contained_numbers:
+        print("html_string does not have any number in it")
         return 0
 
     r"""Get <list> of <strings> with thousand separator ["1'152.37", "1,234.5"]

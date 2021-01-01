@@ -6,6 +6,13 @@
     "element_password": "input[name=password]",
     "element_balance": "span.account_value"
   },
+  "RoboCash": {
+    "url_login": "https://robo.cash/login",
+    "url_dashboard": "https://robo.cash/cabinet/summary",
+    "element_user": "#login_container #auth_email",
+    "element_password": "#login_container #auth_password",
+    "element_balance": "div#summary_page div.new_content .value"
+  },
   "Viventor": {
     "url_login": "https://www.viventor.com/login",
     "url_dashboard": "https://www.viventor.com/profile/account",

@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 beautifulsoup4= "*"
+lxml= "*"
 python-dotenv = "*"
 requests = "*"
 selenium = "*"
