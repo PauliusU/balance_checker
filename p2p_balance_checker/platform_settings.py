@@ -2,15 +2,16 @@ import dotenv
 import json
 import os
 
+import config
+
 dotenv.load_dotenv()  # get environment variables from .env file
-platform_settings_path: str = r".\platform_settings.json"
 
 
 def get_platform_settings(platform_name) -> dict:
     """Get dictionary of both public and private settings for platform"""
 
     # Get public settings
-    with open(platform_settings_path, 'r') as json_file:
+    with open(config.platform_settings_path, 'r') as json_file:
         parsed_json: dict = json.load(json_file)
 
     platform_settings: dict = parsed_json[platform_name]

@@ -9,6 +9,10 @@
 # Pytest
 /.pytest_cache
 
-# Custom
+
+# Etc
+__pycache__
+/bin
+*.sqlite
 *_private*
 /_private

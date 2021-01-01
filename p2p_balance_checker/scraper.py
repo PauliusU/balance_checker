@@ -28,7 +28,7 @@ def get_inner_html_after_login(driver_path: str,
 
     # Navigate to page
     driver.get(url_dashboard)
-    time.sleep(1.5)  # wait for page to fully load
+    time.sleep(2.5)  # wait for page to fully load
 
     # Get inner HTML after successful login
     inner_html: str = driver.execute_script("return document.body.innerHTML")

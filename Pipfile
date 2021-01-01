@@ -8,6 +8,7 @@ beautifulsoup4= "*"
 python-dotenv = "*"
 requests = "*"
 selenium = "*"
+sqlalchemy = "*"
 
 [dev-packages]
 pytest = "*"
