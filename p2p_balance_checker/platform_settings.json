@@ -5,5 +5,12 @@
     "element_user": "input[name=email]",
     "element_password": "input[name=password]",
     "element_balance": "span.account_value"
+  },
+  "Viventor": {
+    "url_login": "https://www.viventor.com/login",
+    "url_dashboard": "https://www.viventor.com/profile/account",
+    "element_user": "#email",
+    "element_password": "#password",
+    "element_balance": "div.blck__cnt.flex"
   }
 }

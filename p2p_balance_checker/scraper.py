@@ -19,17 +19,16 @@ def get_inner_html_after_login(driver_path: str,
     # Find fields. Their type is <webdriver.remote.webelement.WebElement>
     user_field = driver.find_element_by_css_selector(selector_user_field)
     password_field = driver.find_element_by_css_selector(selector_password_field)
-    # driver.implicitly_wait(60)
 
     # Fill form and press enter
     user_field.send_keys(value_user)
     password_field.send_keys(value_password)
     password_field.send_keys(Keys.RETURN)
+    time.sleep(0.3)
 
     # Navigate to page
     driver.get(url_dashboard)
-
-    time.sleep(5.0)  # wait for page to fully load
+    time.sleep(1.5)  # wait for page to fully load
 
     # Get inner HTML after successful login
     inner_html: str = driver.execute_script("return document.body.innerHTML")

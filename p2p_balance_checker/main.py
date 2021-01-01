@@ -45,3 +45,4 @@ if __name__ == '__main__':
     # get_platform_balance("Bondora")
     # print("-------------------")
     get_platform_balance("Finbee")
+    get_platform_balance("Viventor")
