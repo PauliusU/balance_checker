@@ -1,13 +1,12 @@
 from p2p_balance_checker import clean_outputs
 
 
-def test_get_float_from_html_string():
-
+def test_get_float_from_html_tag():
     # No number provided
     assert clean_outputs.get_float_from_html_tag("") == 0
     assert clean_outputs.get_float_from_html_tag("<h1>Heading with no numbers</h1>") == 0
 
-    # Comma separated numbers
+    # Comma separated decimals
     assert clean_outputs.get_float_from_html_tag("€1'958,86") == 1958.86
     assert clean_outputs.get_float_from_html_tag("€1.958,86") == 1958.86
 
@@ -24,3 +23,14 @@ def test_get_float_from_html_string():
     assert clean_outputs.get_float_from_html_tag(
         "<h2 data-v-caa3bf6e=\"\" class=\"m-u-fs-2 m-u-fw-4 m-u-color-1-80--text"
         " m-u-margin-bottom-none m-u-margin-bottom--lg-6\"><span title=\"EUR\">€</span> 7 727.76</h2>") == 7727.76
+
+
+def test_get_html_tag_from_inner_html():
+    # get one tag of many
+    assert clean_outputs.get_html_tag_from_inner_html(
+        "<span id=\"current\">EUR</span>"
+        "<div data-v-caa3bf6e=\"\" class=\"m-u-fs-2 m-u-fw-4 m-u-color-1-80--text"
+        " m-u-margin-bottom-none m-u-margin-bottom--lg-6\"><span title=\"EUR\">€</span> 7 727.76</div>"
+        "<div id=\"amount\">7727.76</div>",
+        "div#amount"
+    ) == "<div id=\"amount\">7727.76</div>"
