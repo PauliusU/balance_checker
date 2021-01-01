@@ -1,5 +1,8 @@
 {
   "Finbee": {
-    "url": "https://p2p.finbee.lt/prisijungti"
+    "url": "https://p2p.finbee.lt/prisijungti",
+    "url_dashboard": "https://p2p.finbee.lt/dashboard",
+    "user_element": "input[name=email]",
+    "password_element": "input[name=password]"
   }
 }

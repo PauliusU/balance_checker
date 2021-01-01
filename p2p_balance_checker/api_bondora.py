@@ -48,8 +48,8 @@ def get_bondora_balance() -> float:
             platform_sum = format(balance_total, '.2f')
 
             return float(platform_sum)
-    except Exception as error_message:
-        print("Bondora: >>>>>>>>>>", error_message)
+    except Exception as exception_message:
+        print(f"Bondora: >>>>>>>>>> {exception_message}")
         traceback.print_exc()
 
 
