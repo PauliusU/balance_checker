@@ -13,6 +13,13 @@
     "element_password": "input[name=_password]",
     "element_balance": "#welcomeDiv div.row div.row"
   },
+  "PaskoluKlubas": {
+    "url_login": "https://www.paskoluklubas.lt/prisijungti",
+    "url_dashboard": "https://www.paskoluklubas.lt/user/account/statistics",
+    "element_user": "#_username",
+    "element_password": "#_password",
+    "element_balance": "table tr:last-child"
+  },
   "RoboCash": {
     "url_login": "https://robo.cash/login",
     "url_dashboard": "https://robo.cash/cabinet/summary",

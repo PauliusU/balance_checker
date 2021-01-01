@@ -29,7 +29,7 @@ def get_inner_html_after_login(driver_path: str,
         # driver.execute_script(f"arguments[0].setAttribute('value', {value_user})", user_field)
         password_field.send_keys(value_password)
         password_field.send_keys(Keys.RETURN)
-        time.sleep(0.3)
+        time.sleep(0.5)
 
         # Navigate to page
         driver.get(url_dashboard)
