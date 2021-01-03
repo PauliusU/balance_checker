@@ -59,7 +59,3 @@ def convert_seconds_into_hours_minutes_seconds(seconds: int) -> str:
     gmtime is used to convert seconds to special tuple format that strftime() requires.
     """
     return time.strftime("%H:%M:%S", time.gmtime(seconds))
-
-
-if __name__ == '__main__':
-    print(get_bondora_balance())

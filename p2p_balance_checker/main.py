@@ -19,7 +19,7 @@ def get_platform_balance(platform_name: str) -> float:
 
         platform: dict = platform_settings.get_platform_settings(platform_name)
 
-        inner_html: str = scraper.get_inner_html_after_login(config.chrome_driver_path,
+        inner_html: str = scraper.get_inner_html_after_login(config.DRIVER_PATH,
                                                              platform["url_login"],
                                                              platform["element_user"],
                                                              platform["element_password"],
@@ -41,17 +41,3 @@ def get_platform_balance(platform_name: str) -> float:
     finally:
         print(f"{platform_name}: {platform_balance} EUR")
         return platform_balance
-
-
-if __name__ == '__main__':
-    # get_platform_balance("Bondora")
-    # get_platform_balance("Mintos")
-    # get_platform_balance("Viventor")
-    get_platform_balance("PaskoluKlubas")
-    # get_platform_balance("Lenndy")
-    # get_platform_balance("Finbee")
-    # get_platform_balance("RoboCash")
-    print()
-    database_abstraction_layer.get_balances_of_today()
-    print()
-    database_abstraction_layer.get_total_balance_of_today()

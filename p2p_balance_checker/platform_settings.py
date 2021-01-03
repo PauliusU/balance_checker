@@ -11,7 +11,7 @@ def get_platform_settings(platform_name) -> dict:
     """Get dictionary of both public and private settings for platform"""
 
     # Get public settings
-    with open(config.platform_settings_path, 'r') as json_file:
+    with open(config.PLATFORM_SETTINGS_PATH, 'r') as json_file:
         parsed_json: dict = json.load(json_file)
 
     platform_settings: dict = parsed_json[platform_name]
@@ -21,7 +21,3 @@ def get_platform_settings(platform_name) -> dict:
     platform_settings["password"] = os.getenv(f"{platform_name.upper()}_PASSWORD")
 
     return platform_settings
-
-
-if __name__ == '__main__':
-    get_platform_settings("Finbee")
