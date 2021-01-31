@@ -37,7 +37,7 @@ def get_inner_html_after_login(driver_path: str,
         # Get inner HTML after successful login
         inner_html: str = driver.execute_script("return document.body.innerHTML")
 
-        # driver.close()
+        driver.close()
 
         return inner_html
 

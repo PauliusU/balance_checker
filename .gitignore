@@ -1,13 +1,13 @@
-# Environment variables and virtual environment
-/.venv
-.env
-
 # Code editors
-/.idea
-/.vscode
+.idea
+.vscode
+
+# Environment variables and virtual environment
+.env
+.venv
 
 # Pytest
-/.pytest_cache
+.pytest_cache
 .coverage
 .coverage.*
 
@@ -17,4 +17,3 @@ __pycache__
 /bin
 *.sqlite
 *_private*
-/_private
