@@ -27,6 +27,13 @@
     "element_password": "#login_container #auth_password",
     "element_balance": "div#summary_page div.new_content .value"
   },
+  "ViaInvest": {
+    "url_login": "https://viainvest.com/users/login/",
+    "url_dashboard": "https://viainvest.com/users/dashboard",
+    "element_user": "#UserEmail",
+    "element_password": "#UserPasswd",
+    "element_balance": ".balance-table-1 tr:last-child td:last-child strong"
+  },
   "Viventor": {
     "url_login": "https://www.viventor.com/login",
     "url_dashboard": "https://www.viventor.com/profile/account",

@@ -8,6 +8,7 @@ P2P balance checker tool scrapes balance data of European P2P platforms.
 - [Lenndy](https://lenndy.com)
 - [Paskolų klubas (NEO finance)](https://www.paskoluklubas.lt/)
 - [Robo.cash](https://robo.cash)
+- [ViaInvest](https://viainvest.com/)
 - [Viventor](https://www.viventor.com/)
 
 

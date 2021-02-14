@@ -11,9 +11,10 @@
 .coverage
 .coverage.*
 
-
 # Etc
 __pycache__
+Pipfile.lock
 /bin
 *.sqlite
 *_private*
+*.xlsx
