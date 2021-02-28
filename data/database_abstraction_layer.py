@@ -6,6 +6,46 @@ from models.balance import Balance
 from models.withdrawal import Withdrawal
 
 
+def create_or_update_withdrawal(withdrawal_amount: float,
+                                platform_name: str) -> Withdrawal:
+    """ Negative (e.g. -100) means deposited (invested)
+    Positive (e.g. 100) means withdrawn (divested)
+    """
+    session = db_connection.create_db_session()
+
+    # E.g. "2021-01-01"
+    date_of_today: str = datetime.datetime.today().strftime('%Y-%m-%d')
+
+    # get withdrawal if exists
+    withdrawal = session.query(Withdrawal). \
+        filter(Withdrawal.platform_name == platform_name,
+               Withdrawal.date == date_of_today).first()
+
+    # Update withdrawal, if found
+    if withdrawal:
+        withdrawal.withdrawal = withdrawal_amount
+        withdrawal.updated_at = get_time_date_string()
+        session.commit()
+    # create new withdrawal otherwise
+    else:
+        withdrawal = Withdrawal()
+        withdrawal.platform_name = platform_name
+        withdrawal.withdrawal = withdrawal_amount
+        withdrawal.date = date_of_today
+        withdrawal.created_at = get_time_date_string()
+
+        session.add(withdrawal)
+        session.commit()
+
+        withdrawal = session.query(Withdrawal) \
+            .filter(Withdrawal.platform_name == platform_name,
+                    Withdrawal.date == date_of_today) \
+            .first()
+
+    session.close()
+    return withdrawal
+
+
 def create_or_update_balance(balance_amount: float,
                              platform_name: str) -> Balance:
     session = db_connection.create_db_session()

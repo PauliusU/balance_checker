@@ -23,8 +23,8 @@
   "RoboCash": {
     "url_login": "https://robo.cash/login",
     "url_dashboard": "https://robo.cash/cabinet/summary",
-    "element_user": "#login_container #auth_email",
-    "element_password": "#login_container #auth_password",
+    "element_user": "#auth_email",
+    "element_password": "#auth_password",
     "element_balance": "div#summary_page div.new_content .value"
   },
   "ViaInvest": {
