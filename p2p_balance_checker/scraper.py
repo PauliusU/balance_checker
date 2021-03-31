@@ -17,9 +17,7 @@ def get_inner_html_after_login(driver_path: str,
     try:
         # Run Chrome driver in headless mode
         options = Options()
-        options.add_argument('--headless')
-        options.add_argument(
-            '--disable-gpu')  # Last I checked this was necessary.
+        options.headless = True
 
         driver: webdriver.chrome.webdriver.WebDriver = webdriver.Chrome(
             driver_path, chrome_options=options)
