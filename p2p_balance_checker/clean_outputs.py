@@ -60,5 +60,5 @@ def get_float_from_html_tag(html_string: str) -> float:
 
     if integers:
         # E.g. <h1>Heading with no numbers</h1> has integers, but no balance
-        print(f"{integers} doe's not contain valid balance value")
+        print(f"{integers} does not contain valid balance value")
         return 0

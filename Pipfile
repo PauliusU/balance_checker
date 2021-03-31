@@ -10,6 +10,7 @@ python-dotenv = "*"
 requests = "*"
 selenium = "*"
 sqlalchemy = "*"
+xirr = "*"
 
 [dev-packages]
 pytest = "*"

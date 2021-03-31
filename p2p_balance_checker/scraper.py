@@ -1,6 +1,7 @@
 import traceback
 
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 import time
 
@@ -14,7 +15,14 @@ def get_inner_html_after_login(driver_path: str,
                                url_dashboard: str = "",
                                platform_name: str = "") -> str:
     try:
-        driver: webdriver.chrome.webdriver.WebDriver = webdriver.Chrome(driver_path)
+        # Run Chrome driver in headless mode
+        options = Options()
+        options.add_argument('--headless')
+        options.add_argument(
+            '--disable-gpu')  # Last I checked this was necessary.
+
+        driver: webdriver.chrome.webdriver.WebDriver = webdriver.Chrome(
+            driver_path, chrome_options=options)
 
         # Load a web page in the current browser session.
         driver.get(url_login)
@@ -22,7 +30,8 @@ def get_inner_html_after_login(driver_path: str,
         # LOGIN
         # Find fields. Their type is <webdriver.remote.webelement.WebElement>
         user_field = driver.find_element_by_css_selector(selector_user_field)
-        password_field = driver.find_element_by_css_selector(selector_password_field)
+        password_field = driver.find_element_by_css_selector(
+            selector_password_field)
 
         # Fill form and press enter
         user_field.send_keys(value_user)
@@ -35,14 +44,16 @@ def get_inner_html_after_login(driver_path: str,
         time.sleep(3)  # wait for page to fully load
 
         # Get inner HTML after successful login
-        inner_html: str = driver.execute_script("return document.body.innerHTML")
+        inner_html: str = driver.execute_script(
+            "return document.body.innerHTML")
 
         driver.close()
 
         return inner_html
 
     except TypeError as exception_message:
-        print(f"FAILURE: check if .env file includes credentials for {platform_name}")
+        print(
+            f"FAILURE: check if .env file includes credentials for {platform_name}")
         traceback.print_exc()
 
     except Exception as exception_message:
