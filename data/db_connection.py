@@ -4,7 +4,7 @@ import os
 import sqlalchemy
 
 dialect = "sqlite:///"
-db_file_base_name: str = "database.sqlite"
+db_file_base_name: str = "p2p.sqlite.db"
 
 
 def create_db_session() -> sqlalchemy.orm.session.Session:

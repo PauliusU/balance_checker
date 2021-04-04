@@ -16,5 +16,6 @@ __pycache__
 Pipfile.lock
 /bin
 *.sqlite
+*.db
 *_private*
 *.xlsx
