@@ -1,14 +1,12 @@
 import os
 import time
 import traceback
-
 import dotenv  # for getting variables from .env file
 import requests
 
 dotenv.load_dotenv()  # get variables from .env file
 
-headers_string: str = os.getenv('BONDORA_API_HEADER')
-headers: dict = eval(headers_string)
+headers: dict = {'Authorization': os.getenv('BONDORA_AUTHORIZATION')}
 bondora_api_url = "https://api.bondora.com/"
 bondora_get_balance_url = bondora_api_url + 'api/v1/account/balance'
 

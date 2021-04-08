@@ -1,7 +1,5 @@
 beautifulsoup4~=4.9.3
-pandas~=1.2.3
 python-dotenv~=0.17.0
 requests~=2.25.1
 selenium~=3.141.0
 sqlalchemy~=1.4.5
-xirr~=0.1.6

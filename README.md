@@ -34,8 +34,10 @@ P2P balance checker tool scrapes balance data of European P2P platforms.
 	```bash
     mv .env_sample .env
     ```
+5. Download [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) (WebDriver for Chrome) and place in the `/bin` folder
+   
 
-5. Run demo:
+6. Run demo:
     
 	```bash
     python demo.py

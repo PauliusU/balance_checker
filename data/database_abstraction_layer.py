@@ -109,7 +109,8 @@ def get_withdrawals_by_platform(platform_name: str) -> dict:
     rows: dict = {}
 
     # Query specific fields returns list
-    query_results: list = session.query(Withdrawal.date, Withdrawal.withdrawal) \
+    query_results: list = session \
+        .query(Withdrawal.date, Withdrawal.withdrawal) \
         .filter(Withdrawal.platform_name == platform_name) \
         .all()
     # print(f"{type(filtered_rows)} {filtered_rows=}")
