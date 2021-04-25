@@ -1,6 +1,6 @@
 # P2P balance checker
 
-P2P balance checker tool scrapes balance data of European P2P platforms.
+P2P balance checker tool scrapes balance data of European P2P platforms and saves it in SQLite database.
 
 ### Supported P2P platforms:
 - [Bondora](https://www.bondora.com/) - only platform with public API
