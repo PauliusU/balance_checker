@@ -21,7 +21,7 @@ P2P balance checker tool scrapes balance data of European P2P platforms and save
     
 2. cd into project
     ```bash
-    cd p2p-balance-ckecker
+    cd p2p_balance_checker
     ```
     
 3. Install requirements:
@@ -32,7 +32,7 @@ P2P balance checker tool scrapes balance data of European P2P platforms and save
 4. Rename ".env_sample" to ".env" file and provide required logins
    
 	```bash
-    mv .env_sample .env
+    mv .env.example .env
     ```
 5. Download [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) (WebDriver for Chrome) and place in the `/bin` folder
    
