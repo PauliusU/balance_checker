@@ -1,5 +1,6 @@
 # P2P balance checker
 [![Build Status](https://api.travis-ci.com/PauliusU/p2p_balance_checker.svg?branch=master)](https://travis-ci.com/github/PauliusU/p2p_balance_checker)
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/PauliusU/CRUD_blog_Laravel/blob/master/LICENSE)
 
 P2P balance checker tool scrapes balance data of European P2P platforms and saves it in SQLite database.
 
