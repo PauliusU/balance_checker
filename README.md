@@ -1,4 +1,5 @@
 # P2P balance checker
+[![Build Status](https://api.travis-ci.com/PauliusU/p2p_balance_checker.svg?branch=master)](https://travis-ci.com/github/PauliusU/p2p_balance_checker)
 
 P2P balance checker tool scrapes balance data of European P2P platforms and saves it in SQLite database.
 
@@ -15,30 +16,28 @@ P2P balance checker tool scrapes balance data of European P2P platforms and save
 ### Run locally
 
 1. Clone this repo:
-	```bash
-    git clone https://github.com/PauliusU/p2p_balance_checker.git
-    ```
+```bash
+git clone https://github.com/PauliusU/p2p_balance_checker.git
+```
     
 2. cd into project
-    ```bash
-    cd p2p_balance_checker
-    ```
+```bash
+cd p2p_balance_checker
+```
     
 3. Install requirements:
-	```bash
-    pip install -r requirements.txt
-    ```
+```bash
+pip install -r requirements.txt
+```
      
 4. Rename ".env_sample" to ".env" file and provide required logins
-   
-	```bash
-    mv .env.example .env
-    ```
+```bash
+mv .env.example .env
+```
 5. Download [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) (WebDriver for Chrome) and place in the `/bin` folder
    
 
-6. Run demo:
-    
-	```bash
-    python demo.py
-    ```
+6. Run demo: 
+```bash
+python demo.py
+```
