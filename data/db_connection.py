@@ -1,21 +1,23 @@
-from models.model_base import ModelBase
-
 import os
 import sqlalchemy
+from models.model_base import ModelBase
 
-dialect = "sqlite:///"
-db_file_base_name: str = "p2p.sqlite.db"
+dialect: str = "sqlite:///"
+db_file_base_name: str = "p2p.sqlite3.db"
 
 
 def create_db_session() -> sqlalchemy.orm.session.Session:
     # connection - create engine
-    engine: sqlalchemy.engine.base.Engine = sqlalchemy.create_engine(dialect + get_absolute_db_path(db_file_base_name))
+    engine: sqlalchemy.engine.base.Engine = \
+        sqlalchemy.create_engine(
+            dialect + get_absolute_db_path(db_file_base_name))
 
     # create metadata - define and create tables
     ModelBase.metadata.create_all(engine)
 
     # create session
-    session: sqlalchemy.orm.session.sessionmaker = sqlalchemy.orm.sessionmaker(bind=engine)
+    session: sqlalchemy.orm.session.sessionmaker = \
+        sqlalchemy.orm.sessionmaker(bind=engine)
 
     return session()
 

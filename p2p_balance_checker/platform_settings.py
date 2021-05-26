@@ -17,7 +17,9 @@ def get_platform_settings(platform_name) -> dict:
     platform_settings: dict = parsed_json[platform_name]
 
     # Add private settings from .env file
-    platform_settings["username"] = os.getenv(f"{platform_name.upper()}_USERNAME")
-    platform_settings["password"] = os.getenv(f"{platform_name.upper()}_PASSWORD")
+    platform_settings["username"] = \
+        os.getenv(f"{platform_name.upper()}_USERNAME")
+    platform_settings["password"] = \
+        os.getenv(f"{platform_name.upper()}_PASSWORD")
 
     return platform_settings

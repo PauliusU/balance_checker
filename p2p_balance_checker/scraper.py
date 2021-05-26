@@ -51,7 +51,8 @@ def get_inner_html_after_login(driver_path: str,
 
     except TypeError as exception_message:
         print(
-            f"FAILURE: check if .env file includes credentials for {platform_name}")
+            f"FAILURE: {exception_message}\n"
+            f"check if .env file includes credentials for {platform_name}")
         traceback.print_exc()
 
     except Exception as exception_message:

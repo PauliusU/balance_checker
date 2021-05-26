@@ -26,15 +26,15 @@ def get_float_from_html_tag(html_string: str) -> float:
         return 0
 
     r"""Get <list> of <strings> with thousand separator ["1'152.37", "1,234.5"]
-        
+
     \d+     1 or more digits
     [',.]   apostrophe, comma or dot (THOUSANDS SEPARATOR). \
                 No space because they are replaced earlier
     \d+     1 or more digits
     [.,]    dot or comma (DECIMAL SEPARATOR)
     \d+     1 or more digits
-    
-    E.g. 1'234.5 
+
+    E.g. 1'234.5
      """
     thousand_separated_numbers: list = re.findall(r"\d+[',.]\d+[.,]\d+",
                                                   html_string)
