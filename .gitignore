@@ -4,7 +4,8 @@
 
 # Environment variables and virtual environment
 .env
-.venv
+.venv/
+venv/
 
 # Pytest
 .pytest_cache

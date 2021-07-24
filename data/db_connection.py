@@ -1,9 +1,12 @@
 import os
+import dotenv
 import sqlalchemy
 from models.model_base import ModelBase
 
+dotenv.load_dotenv()
+
 dialect: str = "sqlite:///"
-db_file_base_name: str = "p2p.sqlite3.db"
+db_file_base_name: str = os.getenv('DB_FILE_PATH')
 
 
 def create_db_session() -> sqlalchemy.orm.session.Session:

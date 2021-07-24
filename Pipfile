@@ -12,8 +12,13 @@ selenium = "*"
 sqlalchemy = "*"
 
 [dev-packages]
+flake8 = "*"
 pytest = "*"
 pytest-cov = "*"
 
 [requires]
 python_version = "3.9"
+
+[scripts]
+lint = "flake8 --statistics"
+test = "pytest"
