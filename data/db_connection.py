@@ -12,8 +12,7 @@ db_file_base_name: str = os.getenv('DB_FILE_PATH')
 def create_db_session() -> sqlalchemy.orm.session.Session:
     # connection - create engine
     engine: sqlalchemy.engine.base.Engine = \
-        sqlalchemy.create_engine(
-            dialect + get_absolute_db_path(db_file_base_name))
+        sqlalchemy.create_engine(dialect + db_file_base_name)
 
     # create metadata - define and create tables
     ModelBase.metadata.create_all(engine)
