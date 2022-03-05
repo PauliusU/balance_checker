@@ -35,7 +35,7 @@ pip install -r requirements.txt
 ```bash
 mv .env.example .env
 ```
-5. Download [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) (WebDriver for Chrome) and place in the `/bin` folder
+5. Download [ChromeDriver](https://sites.google.com/chromium.org/driver/) (WebDriver for Chrome) and place in the `/bin` folder
    
 
 6. Run demo: 
