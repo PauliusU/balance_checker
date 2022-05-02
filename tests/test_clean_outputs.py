@@ -1,4 +1,4 @@
-from p2p_balance_checker import clean_outputs
+from balance_checker import clean_outputs
 
 
 def test_get_float_from_html_tag():

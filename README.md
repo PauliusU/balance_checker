@@ -1,11 +1,11 @@
-# P2P balance checker
+# Balance checker
 [![Build Status](https://api.travis-ci.com/PauliusU/p2p_balance_checker.svg?branch=master)](https://travis-ci.com/github/PauliusU/p2p_balance_checker)
-[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/PauliusU/CRUD_blog_Laravel/blob/master/LICENSE)
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/PauliusU/balance_checker/blob/master/LICENSE)
 
-P2P balance checker tool scrapes balance data of European P2P platforms and saves it in SQLite database.
+Balance checker tool scrapes balance data of European P2P platforms and saves it in SQLite database.
 
 ### Supported P2P platforms:
-- [Bondora](https://www.bondora.com/) - only platform with public API
+- [Bondora](https://www.bondora.com/) (via public API, no scraping used)
 - [Finbee](https://p2p.finbee.lt/)
 - [Lenndy](https://lenndy.com)
 - [Paskolų klubas (NEO finance)](https://www.paskoluklubas.lt/)
@@ -18,12 +18,12 @@ P2P balance checker tool scrapes balance data of European P2P platforms and save
 
 1. Clone this repo:
 ```bash
-git clone https://github.com/PauliusU/p2p_balance_checker.git
+git clone https://github.com/PauliusU/balance_checker.git
 ```
     
 2. cd into project
 ```bash
-cd p2p_balance_checker
+cd balance_checker
 ```
     
 3. Install requirements:
