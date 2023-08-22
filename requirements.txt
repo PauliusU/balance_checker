@@ -1,6 +1,6 @@
 beautifulsoup4~=4.9.3
 lxml~=4.9.1
 python-dotenv~=0.17.0
-requests~=2.25.1
+requests~=2.31.0
 selenium~=3.141.0
 sqlalchemy~=1.4.5
